@@ -1,7 +1,8 @@
 import streamlit
 import pandas as pd
 import requests
-
+import snowflake.connector
+from urllib.error import URLError
 
 streamlit.header(' 🥣 Breakfast Menu')
 streamlit.text('  🥗 Omega 3 & Blueberry Oatmeal')
@@ -32,7 +33,7 @@ streamlit.dataframe(fruityvice_normalized)
 
 streamlit.stop()
 
-import snowflake.connector
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
