@@ -37,19 +37,8 @@ try:
 except URLError as e:
   streamlit.error()
     
-  
-
 
 streamlit.write('The user entered ', fruit_choice)
-
-# streamlit.text(fruityvice_response.json())
-
-# normalizing data 
-
-#creating dataframe
-
-
-streamlit.stop()
 
 streamlit.header("The fruit load list contains:")
 # snowflake-related functions
